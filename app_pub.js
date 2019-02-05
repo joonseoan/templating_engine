@@ -25,7 +25,10 @@ const path = require('path');
     A directory or an array of directories for the application's views. 
     If an array, the views are looked up in the order they occur in the array.
 
-    */
+*/
+
+// 'pug' is a node's core global engine.
+//      Hence, we do not need to import it
 app.set('view engine', 'pug');
 // app.set('views', 'views');
 
@@ -41,7 +44,8 @@ app.use(shopRouters);
 
 app.use('/', (req, res, next) => {
 
-    res.status(404).sendFile(path.join(__dirname, 'views', 'pageNotFound.html'));
+    // res.status(404).sendFile(path.join(__dirname, 'views', 'pageNotFound.html'));
+    res.status(404).render('pageNotFound', {docTitle: 'Page Not Found'});
 
 });
 

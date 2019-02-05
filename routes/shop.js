@@ -17,8 +17,20 @@ router.get('/', (req, res, next) => {
    // res.sendFile(path.join(rootDir, 'views', 'shop.html')); 
 
    // 2) When implementing .pug which is a default templating engine
-   res.render('shop', { products, docTitle: 'Shop' });
+   //  res.render('shop', { products, docTitle: 'Shop', path: '/' });
 
+   // for handlebars that does not support a method. Therefore, we need to define the method and to get return here.
+   res.render('shop', { 
+      products, 
+      docTitle: 'Shop', 
+      path: '/', 
+      hasProducts: products.length > 0,
+      activeShop: true,
+      mainCSS: true
+
+      // "layout" is a special key not to use default layout, "main-layout.hbs"
+      // layout: false
+    });
 });
 
 module.exports = router;

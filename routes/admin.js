@@ -3,10 +3,10 @@ const express = require('express');
 // mini express app
 const router = express.Router();
 
-const path = require('path');
+// const path = require('path');
 
 // 2) dry-up
-const rootDir = require('../utils/path');
+// const rootDir = require('../utils/path');
 
 const products = [];
 
@@ -31,7 +31,15 @@ router.get('/addProducts', (req, res, next) => {
     // res.sendFile(path.join(__dirname, '..', 'views', 'addProducts.html'));
 
     // 3) dry-up
-    res.sendFile(path.join(rootDir, 'views', 'addProducts.html'));
+    // res.sendFile(path.join(rootDir, 'views', 'addProducts.html'));
+
+    // 4) by using pug whichi si default
+    res.render('addProducts', {
+        docTitle: 'Add Products',
+        path: '/admin/addProducts',
+        activeAddProducts: true,
+        productCSS: true
+    });
 
 });
 
