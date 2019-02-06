@@ -1,0 +1,12 @@
+<%- include('share/header.ejs') %>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div>
+        <form action="/userInput" method="POST">
+            <label>Enter your username: </label>
+            <input type="text" name="username">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+<%- include('share/end.ejs') %>

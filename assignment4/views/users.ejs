@@ -1,0 +1,14 @@
+<%- include('share/header.ejs') %>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <ul>
+        <% if(users.length > 0) { %>
+            <% users.forEach(user => {%>
+                <li><%= user %></li>
+            <% }) %>
+        <% } else { %>
+            <h1>No Users!</h1>
+        <% } %>
+    </ul>
+<%- include('share/end.ejs') %>
